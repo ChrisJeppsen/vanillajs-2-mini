@@ -1,17 +1,13 @@
-
- 
-
 function addTodo(event){
     event.preventDefault();
     const item = document.createElement('li');
     item.innerText = document.getElementById('item').value;
+    item.addEventListener('click', completeTodo);
+
     const button = document.createElement('button');
     button.innerText = 'x';
     button.addEventListener('click', removeTodo)
     item.appendChild(button);
-    item.addEventListener('click', completeTodo);
-     
-
 
     const list = document.querySelector('ul');
     list.appendChild(item)
